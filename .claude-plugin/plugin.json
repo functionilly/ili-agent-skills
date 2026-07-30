@@ -1,0 +1,20 @@
+{
+  "name": "ilija-skills",
+  "skills": [
+    "./skills/engineering/setup-skills",
+    "./skills/engineering/grill-with-docs",
+    "./skills/engineering/wayfinder",
+    "./skills/engineering/to-prd",
+    "./skills/engineering/to-issues",
+    "./skills/engineering/triage",
+    "./skills/engineering/tdd",
+    "./skills/engineering/diagnose",
+    "./skills/engineering/improve-codebase-architecture",
+    "./skills/engineering/zoom-out",
+    "./skills/engineering/prototype",
+    "./skills/productivity/grill-me",
+    "./skills/productivity/handoff",
+    "./skills/productivity/caveman",
+    "./skills/productivity/write-a-skill"
+  ]
+}
