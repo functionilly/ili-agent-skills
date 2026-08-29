@@ -49,15 +49,20 @@ RIGHT (vertical):
 ### 1. Plan
 
 Explore the codebase with the glossary vocabulary, so test names match the project
-language. Respect the ADRs in the area you touch.
+language. Read the ADRs in the area you touch. List the ADRs that bind this work.
+
+When the work comes from an issue with an agent brief, map each acceptance criterion
+to one test behavior.
 
 Before any code:
 
 - [ ] Confirm the interface changes with the user
+- [ ] Show the proposed interface as a code block, with one example call and its result
 - [ ] Confirm which behaviors to test, in priority order
 - [ ] Look for chances to make [deep modules](deep-modules.md)
 - [ ] Design the interfaces for [testability](interface-design.md)
 - [ ] List the behaviors to test — not the implementation steps
+- [ ] List the binding ADRs, each with its local rule in one line
 - [ ] Get the user's approval of the plan
 
 Ask: "What does the public interface look like? Which behaviors matter most?"
@@ -97,6 +102,7 @@ After all tests pass, look for [refactor candidates](refactoring.md):
 - [ ] Extract duplication
 - [ ] Deepen modules: move complexity behind simple interfaces
 - [ ] Apply SOLID principles where natural
+- [ ] Write the file header and the interface docstrings, per docs/agents/code-docs.md
 - [ ] Ask what the new code reveals about the old code
 - [ ] Run the tests after each refactor step
 

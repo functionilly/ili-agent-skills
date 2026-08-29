@@ -1,6 +1,6 @@
 ---
 name: triage
-description: Move issues through a state machine of triage roles. Use when the user wants to triage issues, review incoming bugs or feature requests, prepare issues for an AFK agent, or manage the issue workflow.
+description: Move issues through a state machine of triage roles. Use when the user wants to triage issues, review incoming bugs or feature requests, prepare issues for an AFK agent, manage the issue workflow, or prune and consolidate the tracker.
 ---
 
 # Triage
@@ -89,6 +89,24 @@ Show counts and a one-line summary per issue. Let the maintainer select.
    - `wontfix` (enhancement) — write to `.out-of-scope/`, link it in a comment,
      then close ([OUT-OF-SCOPE.md](OUT-OF-SCOPE.md)).
    - `needs-triage` — apply the role. Add a comment if there is partial progress.
+
+## Garden the tracker
+
+Run this pass on request, or after a large batch of issues lands. The pass prunes
+and consolidates open issues. Propose first, then act: do not close an issue
+without the maintainer's approval.
+
+1. List all open issues. Group them by concept with the glossary vocabulary.
+2. Find duplicates. Select a survivor: the oldest issue with the best brief.
+   Fold unique acceptance criteria into the survivor.
+3. Find stale `needs-info` issues. The default limit is 30 days without a reply.
+   Propose a polite close with an invitation to reopen.
+4. Find issues that contradict a current ADR, and issues that name a superseded
+   ADR. Propose a move to `needs-triage` with a note.
+5. Find orphans: open children of closed parents and closed maps. Propose a close
+   or a new parent.
+6. Present one batch list. One line per issue: the action and the reason.
+7. After approval, execute each action: comment, relabel, close.
 
 ## Quick state override
 

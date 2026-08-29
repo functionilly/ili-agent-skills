@@ -87,14 +87,19 @@ The block:
 ### Domain docs
 
 [one line: "single-context" or "multi-context"]. See `docs/agents/domain.md`.
+
+### Code documentation
+
+File headers, constraint lines, and docstrings. See `docs/agents/code-docs.md`.
 ```
 
-Then write the three files. Use the seed templates in this folder:
+Then write the four files. Use the seed templates in this folder:
 
 - [issue-tracker-github.md](./issue-tracker-github.md)
 - [issue-tracker-local.md](./issue-tracker-local.md)
 - [triage-labels.md](./triage-labels.md)
 - [domain.md](./domain.md)
+- [code-docs.md](./code-docs.md)
 
 For "other" trackers, write `docs/agents/issue-tracker.md` from the user's description.
 

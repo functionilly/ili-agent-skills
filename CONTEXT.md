@@ -18,6 +18,9 @@ _Avoid_: ticket (permitted only inside the wayfinder skill, where "decision tick
 A canonical state label on an issue. The five roles are `needs-triage`, `needs-info`,
 `ready-for-agent`, `ready-for-human`, and `wontfix`.
 
+**Garden pass**:
+A triage pass that prunes and consolidates open issues in one approved batch.
+
 **Map**:
 A wayfinder issue with the label `wayfinder:map`. It indexes the decisions of one large effort.
 
@@ -32,6 +35,9 @@ The `CONTEXT.md` file of a repo. It defines the domain terms of that repo.
 
 **ADR**:
 An architecture decision record in `docs/adr/`. It records one hard-to-reverse decision.
+
+**Constraint line**:
+One header comment line in a source file. It states the local rule of one ADR: `ADR-NNNN: <rule>`.
 
 **Vertical slice**:
 A thin, complete path through all layers of the system. A completed slice is demoable.

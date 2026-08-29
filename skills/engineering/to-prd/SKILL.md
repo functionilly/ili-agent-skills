@@ -53,6 +53,8 @@ A list of the decisions made. Include:
 
 Do not include file paths or code snippets. They go stale fast.
 
+Cite the ADRs that bind the solution, each with its local rule in one line.
+
 ## Testing decisions
 
 - What makes a good test here: test external behavior, not implementation details.

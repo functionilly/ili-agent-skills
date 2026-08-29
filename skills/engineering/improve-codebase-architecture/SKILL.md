@@ -63,13 +63,17 @@ Present a numbered list of deepening opportunities. For each candidate:
 - **Solution** — the change, in plain words
 - **Benefits** — in terms of locality, leverage, and better tests
 
+Show a short before and after code sketch for each candidate. Keep each sketch
+under 15 lines. A sketch makes the candidate concrete for the user. The sketch is
+an illustration, not a design.
+
 Use the `CONTEXT.md` vocabulary for the domain, and this skill's glossary for the
 architecture. If the glossary defines "Order", say "the Order intake module".
 
 **ADR conflicts**: surface a candidate that contradicts an ADR only when the friction
 justifies a reopen. Mark it: _"contradicts ADR-0007 — but worth a reopen because…"_.
 
-Do not propose interfaces yet. Ask: "Which of these do you want to explore?"
+Do not design the full interface yet. Ask: "Which of these do you want to explore?"
 
 ### 3. Grilling loop
 
@@ -83,6 +87,8 @@ Side effects happen at once, as decisions crystallize:
 - A deepened module gets a name that is not in `CONTEXT.md`? Add the term.
   Use [CONTEXT-FORMAT.md](../grill-with-docs/CONTEXT-FORMAT.md).
 - A fuzzy term gets sharp during the conversation? Update `CONTEXT.md` there.
+- A module got deepened? Write its file header and interface docstrings, per
+  docs/agents/code-docs.md.
 - The user rejects a candidate with a load-bearing reason? Offer an ADR:
   "Do you want this recorded, so future reviews do not re-suggest it?"
   Skip ephemeral or self-evident reasons.

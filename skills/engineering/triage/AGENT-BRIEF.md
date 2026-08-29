@@ -38,6 +38,10 @@ Each criterion is independently verifiable.
 State what is out of scope. This stops the agent from gold-plating and from assumptions
 about adjacent features.
 
+**Binding decisions travel with the brief.** List each ADR that binds the work area.
+State the local rule in one line, not the full ADR. Do not assume the AFK agent
+searches `docs/adr/` on its own.
+
 ## Template
 
 ```markdown
@@ -64,6 +68,13 @@ What happens after the work is complete. Be specific about edge cases and errors
 **Out of scope:**
 - What must NOT change in this issue
 - The adjacent feature that looks related but is separate
+
+**Binding decisions:**
+- ADR-NNNN (`docs/adr/NNNN-slug.md`) — the local rule in one line
+- Write "None" when no ADR binds the area.
+
+**On ADR conflict:** comment the conflict, remove `ready-for-agent`, apply
+`ready-for-human`, and stop. Do not change code.
 ```
 
 ## Example: a good brief (bug)

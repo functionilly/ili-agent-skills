@@ -40,6 +40,9 @@ When the user uses a vague or overloaded term, propose one precise term.
 When the user describes domain relationships, invent scenarios that probe the edge cases.
 Force precision at the boundaries between concepts.
 
+When the plan is about code, show a short code example of each option. An example
+makes the trade-off concrete.
+
 ### Cross-reference with code
 
 When the user states how something works, check the code. If the code disagrees, say so.
@@ -62,3 +65,7 @@ Offer an ADR only when all three conditions are true:
 3. **A real trade-off** — there were real alternatives, and one was selected for reasons.
 
 If one condition is false, skip the ADR. Use the format in [ADR-FORMAT.md](./ADR-FORMAT.md).
+
+When the user accepts an ADR, list the files the decision binds. Add one constraint
+line to the header of each file. See docs/agents/code-docs.md. When the new ADR
+supersedes an old ADR, grep the old number. Update each header that carries it.

@@ -10,3 +10,5 @@ one. Give your recommended answer with each question.
 Ask one question at a time.
 
 If the codebase can answer a question, explore the codebase instead.
+
+When a question is about code, show a short code sketch of each option.

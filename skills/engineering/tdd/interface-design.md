@@ -29,3 +29,10 @@ Good interfaces make tests natural.
 3. **Keep the surface small.**
    - Fewer methods means fewer tests.
    - Fewer parameters means simpler setup.
+
+## Docstrings are part of the interface
+
+Write the docstring when you design the interface, not after. State the contract and
+the constraints that the signature does not show. Follow `docs/agents/code-docs.md`
+for the style. A docstring does not excuse a wide interface: reduce the surface
+first, then document what remains.

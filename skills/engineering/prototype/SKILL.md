@@ -19,8 +19,9 @@ Identify the question from the prompt, the surrounding code, or the user:
 
 The two branches produce very different artifacts. A wrong branch wastes the whole
 prototype. If the question is ambiguous and the user is away, match the surrounding code:
-a backend module means logic; a page or component means UI. State the assumption at the
-top of the prototype.
+a backend module means logic; a page or component means UI. Before you state the
+question, check docs/adr/. When an ADR already answers the question, stop and report
+the ADR. State the assumption at the top of the prototype.
 
 ## Rules for both branches
 
@@ -41,3 +42,6 @@ top of the prototype.
 The answer is the only part worth keeping. Record it somewhere durable: a commit
 message, an ADR, an issue, or a `NOTES.md` next to the prototype. Record the question
 with the answer. If the user is away, leave the placeholder for the verdict.
+
+When you promote the logic module, write its file header and interface docstrings at
+promotion time. Follow docs/agents/code-docs.md.

@@ -69,7 +69,7 @@ through it, one decision at a time.
 | [wayfinder](./skills/engineering/wayfinder/SKILL.md) | Chart large work as decision tickets on the issue tracker. Resolve them one at a time. |
 | [to-prd](./skills/engineering/to-prd/SKILL.md) | Turn the conversation into a PRD. Publish it to the issue tracker. |
 | [to-issues](./skills/engineering/to-issues/SKILL.md) | Break a plan into vertical-slice issues. |
-| [triage](./skills/engineering/triage/SKILL.md) | Move issues through a small state machine of triage roles. |
+| [triage](./skills/engineering/triage/SKILL.md) | Move issues through a small state machine of triage roles. Prune the tracker with a garden pass. |
 | [tdd](./skills/engineering/tdd/SKILL.md) | Build features with a red-green-refactor loop. |
 | [diagnose](./skills/engineering/diagnose/SKILL.md) | Find hard bugs with a disciplined diagnosis loop. |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md) | Find modules to deepen. Make the codebase testable and navigable. |

@@ -89,6 +89,9 @@ Show the ranked list to the user before you test. The user often re-ranks it at 
 ("we deployed a change to #3 yesterday"). Do not block on the user. Continue with your
 ranking if the user is AFK.
 
+Check each hypothesis against the ADRs in the area. When a candidate fix contradicts
+an ADR, stop and tell the user.
+
 ## Phase 4 — Instrument
 
 Map each probe to one prediction from Phase 3. Change one variable at a time.
@@ -121,6 +124,9 @@ With a correct seam:
 3. Apply the fix.
 4. Watch it pass.
 5. Re-run the Phase 1 loop against the original scenario.
+
+When the fix touches a file that an ADR binds, verify the header constraint line.
+Add the line when it is absent. See docs/agents/code-docs.md.
 
 ## Phase 6 — Cleanup and post-mortem
 

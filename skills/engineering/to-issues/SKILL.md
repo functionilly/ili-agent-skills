@@ -21,7 +21,7 @@ issue tracker. Read the full body and the comments.
 ### 2. Explore the codebase
 
 Explore the codebase if you have not. Use the glossary vocabulary in titles and
-descriptions. Respect the ADRs in the area you touch.
+descriptions. Respect the ADRs in the area you touch. List the ADRs that bind each slice.
 
 ### 3. Draft the vertical slices
 
@@ -80,6 +80,9 @@ A concise description of this slice. Describe the end-to-end behavior, not the l
 ## Blocked by
 
 - A reference to the blocker, or "None — can start immediately".
+
+## Constraints
+- ADR-NNNN — the local rule in one line. Omit this section when no ADR binds the slice.
 
 </issue-template>
 
