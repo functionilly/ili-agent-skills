@@ -70,7 +70,7 @@ What happens after the work is complete. Be specific about edge cases and errors
 - The adjacent feature that looks related but is separate
 
 **Binding decisions:**
-- ADR-NNNN (`docs/adr/NNNN-slug.md`) — the local rule in one line
+- `<slug>` (`docs/adr/<scope>/<slug>.md`) — the local rule in one line
 - Write "None" when no ADR binds the area.
 
 **On ADR conflict:** comment the conflict, remove `ready-for-agent`, apply

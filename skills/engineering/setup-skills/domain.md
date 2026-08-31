@@ -6,8 +6,9 @@ How the skills consume this repo's domain documentation.
 
 - `CONTEXT.md` at the repo root — the glossary.
 - `CONTEXT-MAP.md` at the repo root, if it exists — it points at one `CONTEXT.md` per context.
-- `docs/adr/` — decisions that touch the area of your work. In multi-context repos,
-  also check `src/<context>/docs/adr/`.
+- `docs/adr/` — decisions that touch the area of your work. Read the root and the
+  scope folder of your area. In multi-context repos, also check `src/<context>/docs/adr/`.
+  Naming, placement, and supersession: see `docs/agents/adr-format.md`.
 
 If a file does not exist, continue in silence. Do not flag the absence.
 The `/grill-with-docs` skill creates these files when a term or decision is resolved.
@@ -49,4 +50,4 @@ Note the gap for `/grill-with-docs`.
 
 If your output contradicts an ADR, say so. Do not override it in silence.
 
-> _Contradicts ADR-0007 (event-sourced orders) — but worth a reopen because…_
+> _Contradicts store-orders-as-events — but worth a reopen because…_

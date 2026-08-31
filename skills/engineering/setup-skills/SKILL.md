@@ -57,7 +57,7 @@ Confirm the layout:
 
 ### 3. Confirm
 
-Show a draft of the `## Agent skills` block and the three files under `docs/agents/`.
+Show a draft of the `## Agent skills` block and the files under `docs/agents/`.
 Let the user edit the draft before you write.
 
 ### 4. Write
@@ -91,15 +91,20 @@ The block:
 ### Code documentation
 
 File headers, constraint lines, and docstrings. See `docs/agents/code-docs.md`.
+
+### Decision records
+
+ADR naming, placement, and supersession. See `docs/agents/adr-format.md`.
 ```
 
-Then write the four files. Use the seed templates in this folder:
+Then write the five files. Use the seed templates in this folder:
 
 - [issue-tracker-github.md](./issue-tracker-github.md)
 - [issue-tracker-local.md](./issue-tracker-local.md)
 - [triage-labels.md](./triage-labels.md)
 - [domain.md](./domain.md)
 - [code-docs.md](./code-docs.md)
+- [adr-format.md](./adr-format.md)
 
 For "other" trackers, write `docs/agents/issue-tracker.md` from the user's description.
 
