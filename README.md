@@ -9,7 +9,7 @@ You stay in control.
 
 ## Why these skills exist
 
-Coding agents fail in four common ways. Each skill in this repo prevents one failure.
+Coding agents fail in six common ways. Each skill in this repo prevents one failure.
 
 ### 1. The agent did not build what you want
 
@@ -50,6 +50,14 @@ Chart it as a map of decision tickets on GitHub.
 Use [`/wayfinder`](./skills/engineering/wayfinder/SKILL.md) to chart the map and to work
 through it, one decision at a time.
 
+### 6. The project drifted from its decisions
+
+The ADRs no longer match the code, and the issues no longer match the goal.
+Do not build on a rotten baseline.
+
+Use [`/sys-design-review`](./skills/engineering/sys-design-review/SKILL.md) to rewrite
+the ADRs to the current decisions and to restructure the tracker to match.
+
 ## Quickstart
 
 1. Install the skills into your agent. Point your agent at this repo, or copy the
@@ -73,6 +81,7 @@ through it, one decision at a time.
 | [tdd](./skills/engineering/tdd/SKILL.md) | Build features with a red-green-refactor loop. |
 | [diagnose](./skills/engineering/diagnose/SKILL.md) | Find hard bugs with a disciplined diagnosis loop. |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md) | Find modules to deepen. Make the codebase testable and navigable. |
+| [sys-design-review](./skills/engineering/sys-design-review/SKILL.md) | Rebaseline a project: rewrite the ADRs to current decisions, restructure the tracker to match. |
 | [zoom-out](./skills/engineering/zoom-out/SKILL.md) | Get a map of the modules around unfamiliar code. |
 | [prototype](./skills/engineering/prototype/SKILL.md) | Build throwaway code that answers one design question. |
 

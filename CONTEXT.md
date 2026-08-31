@@ -44,6 +44,10 @@ and serves as the grep token.
 **Constraint line**:
 One header comment line in a source file. It states the local rule of one ADR: `ADR <slug>: <rule>`.
 
+**Rebaseline**:
+A sys-design-review pass. It rewrites the ADRs of a repo to the current decisions
+and restructures the tracker to match.
+
 **Vertical slice**:
 A thin, complete path through all layers of the system. A completed slice is demoable.
 _Avoid_: tracer bullet (used only as an explanation of the concept)
