@@ -116,6 +116,7 @@ The table below shows which skill owns which GitHub operation.
 | Publish a PRD | `/to-prd` | One PRD issue with `needs-triage` |
 | Process incoming issues | `/triage` | Labels, comments, agent briefs, closures |
 | Record a rejection | `/triage` | A `.out-of-scope/*.md` file plus a `wontfix` closure |
+| Rebaseline a project | `/sys-design-review` | A rewritten `docs/adr/` tree plus one restructured issue batch |
 
 Wayfinder command details live in
 [skills/engineering/wayfinder/GITHUB-OPERATIONS.md](../../skills/engineering/wayfinder/GITHUB-OPERATIONS.md).
