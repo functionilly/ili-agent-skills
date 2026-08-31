@@ -16,8 +16,8 @@ Coding agents fail in six common ways. Each skill in this repo prevents one fail
 There is a communication gap between you and the agent. Close the gap before the work
 starts. Use a grilling session: the agent asks you questions until you agree.
 
-Use [`/grill-me`](./skills/productivity/grill-me/SKILL.md) for general work.
-Use [`/grill-with-docs`](./skills/engineering/grill-with-docs/SKILL.md) for code work.
+Use [`/grill-with-docs`](./skills/engineering/grill-with-docs/SKILL.md) to run the
+session. It records the resolved terms and decisions as it goes.
 
 ### 2. The agent uses too many words
 
@@ -45,10 +45,12 @@ to find and repair shallow modules.
 ### 5. The work is too large for one session
 
 Some work is larger than one agent session can hold. Do not attack it directly.
-Chart it as a map of decision tickets on GitHub.
+Break it down on the tracker itself: one parent issue, thin slices as children, and
+one question issue for each part where the way is not clear.
 
-Use [`/wayfinder`](./skills/engineering/wayfinder/SKILL.md) to chart the map and to work
-through it, one decision at a time.
+Use [`/to-issues`](./skills/engineering/to-issues/SKILL.md) to cut the slices and the
+question issues. Use [`/grill-with-docs`](./skills/engineering/grill-with-docs/SKILL.md)
+to resolve each question, one at a time.
 
 ### 6. The project drifted from its decisions
 
@@ -74,8 +76,6 @@ the ADRs to the current decisions and to restructure the tracker to match.
 | --- | --- |
 | [setup-skills](./skills/engineering/setup-skills/SKILL.md) | Configure a repo for the other skills. Run once per repo. |
 | [grill-with-docs](./skills/engineering/grill-with-docs/SKILL.md) | Interview the user about a plan. Update `CONTEXT.md` and ADRs during the session. |
-| [wayfinder](./skills/engineering/wayfinder/SKILL.md) | Chart large work as decision tickets on the issue tracker. Resolve them one at a time. |
-| [to-prd](./skills/engineering/to-prd/SKILL.md) | Turn the conversation into a PRD. Publish it to the issue tracker. |
 | [to-issues](./skills/engineering/to-issues/SKILL.md) | Break a plan into vertical-slice issues. |
 | [triage](./skills/engineering/triage/SKILL.md) | Move issues through a small state machine of triage roles. Prune the tracker with a garden pass. |
 | [tdd](./skills/engineering/tdd/SKILL.md) | Build features with a red-green-refactor loop. |
@@ -89,7 +89,6 @@ the ADRs to the current decisions and to restructure the tracker to match.
 
 | Skill | Function |
 | --- | --- |
-| [grill-me](./skills/productivity/grill-me/SKILL.md) | Interview the user about a plan until agreement. |
 | [handoff](./skills/productivity/handoff/SKILL.md) | Compact the conversation into a document for the next session. |
 | [caveman](./skills/productivity/caveman/SKILL.md) | Compressed output mode. Fewer tokens, same substance. |
 | [write-a-skill](./skills/productivity/write-a-skill/SKILL.md) | Create a new skill with the correct structure. |

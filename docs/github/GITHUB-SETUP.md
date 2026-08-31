@@ -1,7 +1,7 @@
 # GitHub Integration Setup
 
 This document configures GitHub for the skills in this repo. The `triage`, `to-issues`,
-`to-prd`, and `wayfinder` skills read and write GitHub issues. Complete each step in order.
+and `sys-design-review` skills read and write GitHub issues. Complete each step in order.
 Complete steps 1 to 4 once per machine. Complete steps 5 to 7 once per repo.
 
 ## 1. Install the GitHub CLI
@@ -15,7 +15,7 @@ The skills use the `gh` CLI for all issue operations.
 2. Check the version: `gh --version`
 
 **Requirement**: version 2.94.0 or higher. This version adds the `--parent`,
-`--blocked-by`, and `--blocking` flags. Wayfinder needs these flags.
+`--blocked-by`, and `--blocking` flags. The to-issues and triage skills need these flags.
 If your version is lower, update: `brew upgrade gh` (macOS).
 
 ## 2. Authenticate
@@ -50,7 +50,7 @@ Get the id with: `gh api repos/{owner}/{repo}/issues/{number} --jq .id`
 
 ## 5. Create the labels
 
-The skills use two label sets. Run the script from the repo you want to configure:
+The skills use the triage label set. Run the script from the repo you want to configure:
 
 ```bash
 bash scripts/setup-github-labels.sh
@@ -58,7 +58,7 @@ bash scripts/setup-github-labels.sh
 
 The script creates these labels:
 
-Triage roles (used by `/triage`, `/to-issues`, `/to-prd`):
+Triage roles (used by `/triage` and `/to-issues`):
 
 | Label | Meaning |
 | --- | --- |
@@ -67,16 +67,6 @@ Triage roles (used by `/triage`, `/to-issues`, `/to-prd`):
 | `ready-for-agent` | The issue is fully specified. An AFK agent can take it. |
 | `ready-for-human` | The issue needs human implementation. |
 | `wontfix` | The issue will not be actioned. |
-
-Wayfinder (used by `/wayfinder`):
-
-| Label | Meaning |
-| --- | --- |
-| `wayfinder:map` | The issue is a map. It indexes one large effort. |
-| `wayfinder:research` | The ticket resolves through reading. AFK. |
-| `wayfinder:prototype` | The ticket resolves through a cheap artifact. HITL. |
-| `wayfinder:grilling` | The ticket resolves through conversation. HITL. |
-| `wayfinder:task` | The ticket is manual work that unblocks a decision. |
 
 GitHub creates `bug` and `enhancement` by default. The triage skill uses them as
 category roles. Do not delete them.
@@ -109,14 +99,10 @@ The table below shows which skill owns which GitHub operation.
 
 | Flow | Skill | GitHub artifact |
 | --- | --- | --- |
-| Plan a large effort | `/wayfinder` | A map issue plus child decision tickets |
-| Record one decision | `/wayfinder` | A resolution comment; a closed ticket; a map index line |
+| Plan a large effort | `/to-issues` | A parent issue, slice issues, and question issues |
+| Resolve an open question | `/grill-with-docs` | An ADR or new slices; the question issue closes citing them |
 | Record a hard technical decision | `/grill-with-docs` | An ADR file in `docs/adr/` (committed, not an issue) |
 | Turn a plan into work | `/to-issues` | Vertical-slice issues with `needs-triage` |
-| Publish a PRD | `/to-prd` | One PRD issue with `needs-triage` |
 | Process incoming issues | `/triage` | Labels, comments, agent briefs, closures |
 | Record a rejection | `/triage` | A `.out-of-scope/*.md` file plus a `wontfix` closure |
 | Rebaseline a project | `/sys-design-review` | A rewritten `docs/adr/` tree plus one restructured issue batch |
-
-Wayfinder command details live in
-[skills/engineering/wayfinder/GITHUB-OPERATIONS.md](../../skills/engineering/wayfinder/GITHUB-OPERATIONS.md).

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Create the labels that the triage and wayfinder skills use.
+# Create the triage labels that the skills use.
 # Run from inside the target repo. Requires gh CLI with auth.
 set -euo pipefail
 
@@ -19,12 +19,5 @@ label "needs-info"      "fbca04" "Waiting on the reporter for more information"
 label "ready-for-agent" "0e8a16" "Fully specified. An AFK agent can take it"
 label "ready-for-human" "1d76db" "Needs human implementation"
 label "wontfix"         "ffffff" "Will not be actioned"
-
-# Wayfinder
-label "wayfinder:map"       "5319e7" "A wayfinder map. Indexes one large effort"
-label "wayfinder:research"  "bfd4f2" "Ticket resolves through reading. AFK"
-label "wayfinder:prototype" "c2e0c6" "Ticket resolves through a cheap artifact. HITL"
-label "wayfinder:grilling"  "f9d0c4" "Ticket resolves through conversation. HITL"
-label "wayfinder:task"      "e4e669" "Manual work that unblocks a decision"
 
 echo "Done. All labels are present."
