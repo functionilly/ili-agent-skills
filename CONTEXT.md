@@ -1,7 +1,7 @@
 # Agent Skills
 
-A collection of agent skills for Claude Code and compatible agents. The skills read
-per-repo configuration that `/setup-skills` writes.
+A collection of agent skills for coding agents that read the SKILL.md format. The
+skills read per-repo configuration that `/setup-skills` writes.
 
 ## Language
 
