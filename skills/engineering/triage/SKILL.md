@@ -101,8 +101,8 @@ without the maintainer's approval.
    Fold unique acceptance criteria into the survivor.
 3. Find stale `needs-info` issues. The default limit is 30 days without a reply.
    Propose a polite close with an invitation to reopen.
-4. Find issues that contradict a current ADR, and issues that name a superseded
-   ADR. Propose a move to `needs-triage` with a note.
+4. Find issues that contradict a current ADR, and issues that cite an ADR slug
+   with no matching file in `docs/adr/`. Propose a move to `needs-triage` with a note.
 5. Find orphans: open children of closed parents and closed maps. Propose a close
    or a new parent.
 6. Present one batch list. One line per issue: the action and the reason.

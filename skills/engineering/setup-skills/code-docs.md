@@ -12,14 +12,14 @@ When an ADR binds a file, add one constraint line per ADR under the purpose:
 ```ts
 // Purpose: computes trainer earnings for the sessions view.
 // Constraints:
-// - ADR-0006: "earned" means a row in trainer_earning_sessions. Do not re-derive it.
+// - ADR read-earned-from-earning-sessions: "earned" means a row in trainer_earning_sessions. Do not re-derive it.
 ```
 
 A constraint line states the local rule in one line and names the ADR. The reason
 stays in the ADR. Do not copy ADR prose into the header.
 
-The string `ADR-NNNN` is a grep token. It must match a file in `docs/adr/`. A grep
-of the number must find each file that the decision binds.
+The slug is a grep token. It must match a filename in `docs/adr/`. A grep of the
+slug must find each file that the decision binds. See `docs/agents/adr-format.md`.
 
 ## Docstrings
 
@@ -41,7 +41,7 @@ Google style example:
 def earned_sessions(trainer_id: str) -> list[Session]:
     """Return the sessions a trainer has earned.
 
-    "Earned" means a row in trainer_earning_sessions (ADR-0006).
+    "Earned" means a row in trainer_earning_sessions (adr: read-earned-from-earning-sessions).
 
     Args:
         trainer_id: The trainer to query.
@@ -54,7 +54,7 @@ def earned_sessions(trainer_id: str) -> list[Session]:
 ## Maintenance
 
 - When you change a file, verify its header. Update the header when the purpose changed.
-- When an ADR is superseded, grep its number. Update each header that carries it.
+- When an ADR is superseded, grep its slug. Update each header that carries it.
 
 ## Exceptions
 

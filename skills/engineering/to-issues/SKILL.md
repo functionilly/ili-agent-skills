@@ -82,7 +82,7 @@ A concise description of this slice. Describe the end-to-end behavior, not the l
 - A reference to the blocker, or "None — can start immediately".
 
 ## Constraints
-- ADR-NNNN — the local rule in one line. Omit this section when no ADR binds the slice.
+- `<slug>` — the local rule in one line. Omit this section when no ADR binds the slice.
 
 </issue-template>
 

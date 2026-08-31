@@ -71,7 +71,7 @@ Use the `CONTEXT.md` vocabulary for the domain, and this skill's glossary for th
 architecture. If the glossary defines "Order", say "the Order intake module".
 
 **ADR conflicts**: surface a candidate that contradicts an ADR only when the friction
-justifies a reopen. Mark it: _"contradicts ADR-0007 — but worth a reopen because…"_.
+justifies a reopen. Mark it: _"contradicts store-orders-as-events — but worth a reopen because…"_.
 
 Do not design the full interface yet. Ask: "Which of these do you want to explore?"
 

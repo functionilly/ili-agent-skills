@@ -34,10 +34,15 @@ The set of open, unblocked, unclaimed decision tickets of a map.
 The `CONTEXT.md` file of a repo. It defines the domain terms of that repo.
 
 **ADR**:
-An architecture decision record in `docs/adr/`. It records one hard-to-reverse decision.
+An architecture decision record in `docs/adr/`. It records one current, hard-to-reverse
+decision. Its filename slug is its identifier.
+
+**Slug**:
+The kebab-case filename of an ADR, without `.md`. It states the rule as an imperative
+and serves as the grep token.
 
 **Constraint line**:
-One header comment line in a source file. It states the local rule of one ADR: `ADR-NNNN: <rule>`.
+One header comment line in a source file. It states the local rule of one ADR: `ADR <slug>: <rule>`.
 
 **Vertical slice**:
 A thin, complete path through all layers of the system. A completed slice is demoable.

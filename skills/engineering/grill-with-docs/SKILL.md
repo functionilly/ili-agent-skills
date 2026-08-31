@@ -68,4 +68,18 @@ If one condition is false, skip the ADR. Use the format in [ADR-FORMAT.md](./ADR
 
 When the user accepts an ADR, list the files the decision binds. Add one constraint
 line to the header of each file. See docs/agents/code-docs.md. When the new ADR
-supersedes an old ADR, grep the old number. Update each header that carries it.
+supersedes an old ADR, replace or delete the old file. Add the `Superseded:` trailer
+to the commit. Then grep the old slug. Update each header, docstring, and issue that
+carries it.
+
+### Check history before a re-litigation
+
+When the user floats an alternative that the project possibly rejected before, query
+git before you challenge it fresh:
+
+```
+git log -p -i -S"<term>" -- docs/adr/
+```
+
+On a hit, show the old rule and its why. Ask: "Has the paradigm shifted?" If yes,
+supersede. If no, the old rule stands. Do not load history into context in any other case.
