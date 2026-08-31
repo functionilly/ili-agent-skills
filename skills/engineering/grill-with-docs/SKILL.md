@@ -72,6 +72,12 @@ supersedes an old ADR, replace or delete the old file. Add the `Superseded:` tra
 to the commit. Then grep the old slug. Update each header, docstring, and issue that
 carries it.
 
+### Keep the docs free of history
+
+Write each entry as a current rule. Do not write "previously", "as of", or a
+version reference; git holds the history. After the writes of a session, run the
+history check in [ADR-FORMAT.md](./ADR-FORMAT.md). Zero hits is the pass condition.
+
 ### Check history before a re-litigation
 
 When the user floats an alternative that the project possibly rejected before, query
