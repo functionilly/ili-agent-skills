@@ -62,11 +62,30 @@ the ADRs to the current decisions and to restructure the tracker to match.
 
 ## Quickstart
 
-1. Install the skills into your agent. Point your agent at this repo, or copy the
-   `skills/` folders into `~/.claude/skills/`.
+1. Install the skills into your agent:
+   - **Claude Code** — add this repo as a plugin, or copy the `skills/` folders
+     into `~/.claude/skills/`.
+   - **OpenAI Codex** — copy the `skills/` folders into `~/.codex/skills/`, or
+     into `.agents/skills/` of one repo.
+   - **Other agents** — point an `## Agent skills` block in `AGENTS.md` at the
+     `SKILL.md` files.
 2. Complete the GitHub integration. Follow [docs/github/GITHUB-SETUP.md](./docs/github/GITHUB-SETUP.md).
 3. Run [`/setup-skills`](./skills/engineering/setup-skills/SKILL.md) once in each repo.
    It records your issue tracker, your triage labels, and your document layout.
+
+## Compatibility
+
+The skills bind to no single provider. Each `SKILL.md` follows the Agent Skills
+format: `name` and `description` in the frontmatter, instructions in the body.
+Notes for agents other than Claude Code:
+
+- An agent that does not know an extra frontmatter field, such as
+  `disable-model-invocation`, ignores the field. The skill still works.
+- `.claude-plugin/plugin.json` is Claude Code packaging. Other agents do not read it.
+- The `/skill-name` notation in these docs means "invoke the skill with this name".
+  Use the invocation syntax of your agent.
+- The skills write per-repo configuration into `CLAUDE.md` or `AGENTS.md`,
+  whichever the repo has. Both work with any agent that reads the file.
 
 ## Skill reference
 

@@ -32,7 +32,8 @@ project scalable. This pass aims that work.
 
 ## Phase 1 — Survey
 
-Delegate the collection to subagents. Collect three inputs:
+Delegate the collection to subagents when the agent has them. Without subagents,
+collect in sequence. Collect three inputs:
 
 1. **Codebase map** — the modules, their boundaries, and their dependencies.
 2. **ADR inventory** — one line per file in `docs/adr/`, in whatever format the

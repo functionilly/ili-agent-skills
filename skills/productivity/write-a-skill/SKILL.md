@@ -27,6 +27,9 @@ description: Create new agent skills with the correct structure, progressive dis
 
 ## Structure
 
+A skill is a directory with a `SKILL.md` file. The format is the Agent Skills
+format; Claude Code, OpenAI Codex, and other agents read it.
+
 ```
 skill-name/
 ├── SKILL.md           # Main instructions (required)
