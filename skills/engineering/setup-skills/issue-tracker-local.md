@@ -7,15 +7,9 @@ projects or repos without a remote.
 
 ```
 .scratch/
-├── <feature-name>/
-│   ├── 001-first-issue.md
-│   └── 002-second-issue.md
-└── wayfinder/
-    └── <map-name>/
-        ├── MAP.md
-        └── tickets/
-            ├── 001-<slug>.md
-            └── 002-<slug>.md
+└── <feature-name>/
+    ├── 001-first-issue.md
+    └── 002-second-issue.md
 ```
 
 ## Operations
@@ -25,11 +19,10 @@ projects or repos without a remote.
 - **Comment**: append a `## Update <date>` section to the file.
 - **Labels**: write a `labels:` line in the file's frontmatter.
 - **Close**: move the file into a `closed/` subfolder.
+- **Blocking**: write a `blocked-by:` line in the file's frontmatter.
+- **Assign**: write an `assignee:` line in the file's frontmatter.
 
-## Wayfinding operations
+## Question issues
 
-- **The map** is `MAP.md` in the map's folder.
-- **A decision ticket** is a file under `tickets/`.
-- **Blocking**: write a `blocked-by:` line in the ticket's frontmatter.
-- **A claim**: write an `assignee:` line in the ticket's frontmatter.
-- **The frontier query**: list open tickets with no `assignee` and no open `blocked-by` target.
+A question issue is a numbered file with `labels: ready-for-human` in the frontmatter.
+List the open questions: open files with that label and no open `blocked-by` target.

@@ -1,6 +1,6 @@
 # Issue tracker: GitHub
 
-Issues and PRDs for this repo live in GitHub Issues. Use the `gh` CLI for all operations.
+Issues for this repo live in GitHub Issues. Use the `gh` CLI for all operations.
 The CLI infers the repo from `git remote -v`.
 
 ## Operations
@@ -15,27 +15,23 @@ The CLI infers the repo from `git remote -v`.
 - **Assign**: `gh issue edit <number> --add-assignee @me`
 - **Close**: `gh issue close <number> --comment "..."`
 
-## Wayfinding operations
+## Question-issue operations
 
-The wayfinder skill needs these mappings:
-
-- **The map** is an issue with the label `wayfinder:map`.
-- **A decision ticket** is a child issue of the map. Create it with `--parent <map-number>`.
-- **Blocking** uses native dependencies: `gh issue edit <n> --add-blocked-by <m>`.
-- **A claim** is an assignee: `gh issue edit <n> --add-assignee @me`.
-- **The frontier query**: list the open children of the map. Keep only issues with no
-  assignee and no open blocker:
+- **A question issue** is a child of the effort's parent issue, labeled `ready-for-human`.
+  Create it with `--parent <number>`.
+- **The open questions of one effort**: list the open children of the parent that
+  carry the label:
 
   ```bash
-  gh issue list --state open \
-    --json number,title,labels,assignees,parent,blockedBy \
-    --jq '[.[] | select(.parent.number == MAP) | select(.assignees | length == 0)]'
+  gh issue list --state open --label ready-for-human \
+    --json number,title,parent \
+    --jq '[.[] | select(.parent.number == PARENT)]'
   ```
 
-  Then remove issues that have an open entry in `blockedBy`. If your `gh` version does not
-  expose these JSON fields, run `gh issue list --json` to list the available fields.
+  If your `gh` version does not expose these JSON fields, run `gh issue list --json`
+  to list the available fields.
 
 ## Phrase mappings
 
 - "Publish to the issue tracker" = create a GitHub issue.
-- "Fetch the ticket" = `gh issue view <number> --comments`.
+- "Fetch the issue" = `gh issue view <number> --comments`.

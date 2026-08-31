@@ -1,6 +1,6 @@
 ---
 name: setup-skills
-description: Set up the per-repo configuration that the engineering skills read - the issue tracker, the triage label vocabulary, and the domain doc layout. Run before first use of to-issues, to-prd, triage, wayfinder, diagnose, tdd, improve-codebase-architecture, or zoom-out.
+description: Set up the per-repo configuration that the engineering skills read - the issue tracker, the triage label vocabulary, and the domain doc layout. Run before first use of to-issues, triage, sys-design-review, diagnose, tdd, improve-codebase-architecture, or zoom-out.
 disable-model-invocation: true
 ---
 

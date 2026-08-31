@@ -25,7 +25,7 @@ The pass is complete when the ADR tree and the tracker agree:
 - Every ADR follows `docs/agents/adr-format.md`. No numbered files remain.
 - Every open issue cites live slugs, or left the tracker in the approved batch.
 - Every accepted decision from the grill is one ADR file.
-- Every gap has a home: a decision ticket or an issue.
+- Every gap has a home: a question issue or a slice issue.
 
 "The project is scalable" is not the done condition. The later work makes the
 project scalable. This pass aims that work.
@@ -66,8 +66,8 @@ trailer in the commit for each replaced or deleted decision.
 Compare the goal against the current-state brief, through the new ADRs. Write one
 gap list. Classify each gap:
 
-- **The way is not clear** — an open question blocks the work. Route it to
-  `/wayfinder` as a decision ticket.
+- **The way is not clear** — an open question blocks the work. File a question
+  issue via `/to-issues`. A grill session resolves it later.
 - **The work is clear** — route it to `/to-issues` as vertical slices. Cite the
   binding slugs in each issue.
 
@@ -84,4 +84,4 @@ slugs." The work is comment-only and behavior-safe. Label it `ready-for-agent`.
 
 1. Grep the tracker for slugs with no matching file in `docs/adr/`. Zero hits.
 2. Read each file in `docs/adr/`. Each follows the template. Zero exceptions.
-3. Read the gap list. Every line names a decision ticket or an issue.
+3. Read the gap list. Every line names a question issue or a slice issue.

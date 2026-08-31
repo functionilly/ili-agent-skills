@@ -103,8 +103,7 @@ without the maintainer's approval.
    Propose a polite close with an invitation to reopen.
 4. Find issues that contradict a current ADR, and issues that cite an ADR slug
    with no matching file in `docs/adr/`. Propose a move to `needs-triage` with a note.
-5. Find orphans: open children of closed parents and closed maps. Propose a close
-   or a new parent.
+5. Find orphans: open children of closed parents. Propose a close or a new parent.
 6. Present one batch list. One line per issue: the action and the reason.
 7. After approval, execute each action: comment, relabel, close.
 

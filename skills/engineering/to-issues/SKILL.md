@@ -1,6 +1,6 @@
 ---
 name: to-issues
-description: Break a plan, spec, or PRD into independent issues on the project issue tracker, cut as vertical slices. Use when the user wants to convert a plan into issues or break down work.
+description: Break a plan or spec into independent issues on the project issue tracker, cut as vertical slices, with question issues for the parts that are not decidable yet. Use when the user wants to convert a plan into issues or break down work.
 ---
 
 # To Issues
@@ -37,12 +37,16 @@ Slice rules:
 - A completed slice is demoable or verifiable on its own.
 - Prefer many thin slices over few thick slices.
 
+When one part of the plan is not decidable yet, do not slice that part. Draft one
+question issue in its place. The title is the question. The body states what a
+resolution needs, and which slices the answer unblocks.
+
 ### 4. Quiz the user
 
 Present the breakdown as a numbered list. For each slice, show:
 
 - **Title**: a short descriptive name
-- **Type**: HITL or AFK
+- **Type**: HITL, AFK, or Question
 - **Blocked by**: the slices that must complete first, if any
 - **User stories covered**: from the source material, if present
 
@@ -57,16 +61,24 @@ Iterate until the user approves.
 
 ### 5. Publish the issues
 
-Publish one issue per approved slice. Use the template below. Apply the `needs-triage`
-label. Publish in dependency order, blockers first, so the "Blocked by" fields can
-reference real issue identifiers. On GitHub, also wire the dependency natively:
-`gh issue edit <n> --add-blocked-by <m>`.
+If the source is not already an issue, create one thin parent issue first: the goal
+in one line, plus the binding slugs. Do not put plan prose in it.
+
+Publish one issue per approved slice, as a child of the parent. Use the template
+below. Apply the `needs-triage` label. Publish in dependency order, blockers first,
+so the "Blocked by" fields can reference real issue identifiers. On GitHub, also
+wire the dependency natively: `gh issue edit <n> --add-blocked-by <m>`.
+
+Publish each question issue as a child of the parent, with the `ready-for-human`
+label. Wire `--add-blocked-by` from each slice it blocks. A grill session resolves
+it. The resolution is an ADR, new slices, or both. Close the question issue with a
+comment that cites the slug or the new issues.
 
 <issue-template>
 
 ## Parent
 
-A reference to the parent issue, if the source was an issue. Otherwise omit this section.
+A reference to the parent issue.
 
 ## What to build
 
