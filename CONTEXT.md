@@ -47,6 +47,14 @@ and restructures the tracker to match.
 The verbatim grep of `docs/adr/` and the glossary for history markers, defined in
 the ADR format doc. Zero hits is the pass condition.
 
+**App line**:
+One or two sentences that state what the application is and for whom. The whole
+context of a fresh-eyes grill.
+
+**Fresh-eyes grill**:
+A grill session run by a fresh agent that holds only the app line and the
+question guide. It defines the target architecture from first principles.
+
 **Vertical slice**:
 A thin, complete path through all layers of the system. A completed slice is demoable.
 _Avoid_: tracer bullet (used only as an explanation of the concept)

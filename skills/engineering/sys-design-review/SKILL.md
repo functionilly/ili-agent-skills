@@ -1,13 +1,14 @@
 ---
 name: sys-design-review
-description: Rebaseline a project - review the codebase, the ADRs in any shape, and the open issues; grill the user to define the goal; rewrite the ADRs to current decisions; and restructure the tracker to match. Use when the user wants a system design review or a rebaseline, when the ADRs are messy or stale, or when the tracker no longer matches the goal.
+description: Rebaseline a project - review the codebase, the ADRs in any shape, and the open issues; grill the user to define the goal; rewrite the ADRs to current decisions; restructure the tracker to match; and run a fresh-eyes grill that defines the target architecture. Use when the user wants a system design review or a rebaseline, when the ADRs are messy or stale, or when the tracker no longer matches the goal.
 disable-model-invocation: true
 ---
 
 # Sys Design Review
 
 Rebaseline a project. Rewrite the decision record to match the current goal.
-Restructure the tracker to match the decision record. Do not change code.
+Restructure the tracker to match the decision record. Then define the target
+architecture with a fresh-eyes grill. Do not change code.
 
 This skill conducts other skills. It owns the survey, the gap analysis, and the
 routing between phases. The interview, the ADR writes, and the tracker actions
@@ -16,7 +17,7 @@ belong to the skills that own them.
 ## Preconditions
 
 - `/setup-skills` has run in the repo. It names the tracker and seeds `docs/agents/`.
-- The user is present. Phases 2, 3, and 5 need approvals. Do not run this skill AFK.
+- The user is present. Phases 2, 3, 5, and 6 need the user. Do not run this skill AFK.
 
 ## Definition of done
 
@@ -26,6 +27,8 @@ The pass is complete when the ADR tree and the tracker agree:
 - Every open issue cites live slugs, or left the tracker in the approved batch.
 - Every accepted decision from the grill is one ADR file.
 - Every gap has a home: a question issue or a slice issue.
+- The fresh-grill report exists, and each divergence between the report and the
+  ADR tree has a home: a supersession or a question issue.
 
 "The project is scalable" is not the done condition. The later work makes the
 project scalable. This pass aims that work.
@@ -81,6 +84,31 @@ and file the new issues from phase 4.
 File one more issue, first in the queue: "Repoint constraint lines to the new
 slugs." The work is comment-only and behavior-safe. Label it `ready-for-agent`.
 
+## Phase 6 — Fresh-eyes grill
+
+The session that ran phases 1–5 holds the assumptions of the current structure.
+A fresh agent holds none. This phase defines the target architecture from first
+principles: what the application is, how it deploys, and how the code is
+organized.
+
+1. **Write the app line.** Ask the user for one or two sentences: what the
+   application is, and for whom. Confirm the wording with the user.
+2. **Launch the interviewer.** Start a fresh agent on the strongest model
+   available (in Claude Code: an Opus subagent). Give it the app line and
+   [FRESH-GRILL.md](./FRESH-GRILL.md). Give it nothing else: no brief, no ADRs,
+   no code.
+3. **Relay.** Pass each question to the user verbatim, one at a time. Pass each
+   answer back verbatim. The interviewer probes vague answers with the guide;
+   you add nothing in either direction.
+4. **Close.** The interviewer reports the target architecture and its open
+   risks. Compare the report with the ADR tree from phase 3. Route each
+   divergence: a supersession through `/grill-with-docs`, or a question issue
+   through `/to-issues`.
+
+When the agent cannot run subagents, run the interview yourself from
+[FRESH-GRILL.md](./FRESH-GRILL.md). Ask each question before you form your own
+answer from the code.
+
 ## Checks before you report done
 
 1. Grep the tracker for slugs with no matching file in `docs/adr/`. Zero hits.
@@ -88,3 +116,5 @@ slugs." The work is comment-only and behavior-safe. Label it `ready-for-agent`.
 3. Run the history check of `docs/agents/adr-format.md`. Zero hits, or each hit
    states a current rule about an external system.
 4. Read the gap list. Every line names a question issue or a slice issue.
+5. Read the fresh-grill report. Every divergence from the ADR tree names a
+   supersession commit or a question issue.
