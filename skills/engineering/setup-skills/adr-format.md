@@ -67,4 +67,4 @@ Do not load history into context in any other case.
 
 Old numbered ADRs (`0001-slug.md`) can exist in this repo. Read them as they are.
 Write new ADRs in the format above only. Do not renumber or convert old files ad hoc;
-a rebaseline pass does that.
+a rebaseline pass (`/sys-design-review`) does that.
