@@ -84,4 +84,6 @@ slugs." The work is comment-only and behavior-safe. Label it `ready-for-agent`.
 
 1. Grep the tracker for slugs with no matching file in `docs/adr/`. Zero hits.
 2. Read each file in `docs/adr/`. Each follows the template. Zero exceptions.
-3. Read the gap list. Every line names a question issue or a slice issue.
+3. Run the history check of `docs/agents/adr-format.md`. Zero hits, or each hit
+   states a current rule about an external system.
+4. Read the gap list. Every line names a question issue or a slice issue.
