@@ -23,6 +23,14 @@ Each file follows one template:
 **Why:** {the trade-off in plain terms, with what was given up}
 ```
 
+The template is the whole file: one title, three fields, nothing after them.
+Apply one test to each sentence: does it change what an agent does next?
+
+A rejected alternative that still binds is a current rule. Write it into the
+Rule or the Why in this form: "Do not use X. X breaks under Y." Y must be a
+reason an agent can check today, not a memory of the decision day. A rejection
+with no bind on today's work stays out of the file; git holds it.
+
 ## Read
 
 Before work in an area, read the ADRs at `docs/adr/` root and in the scope folder of
@@ -42,14 +50,27 @@ A grep of the slug must find each site the decision binds.
 
 - When the decision evolves, edit the file in place.
 - When the paradigm shifts, delete the file and write the new one.
-- Do not describe the change in the file. The note about what changed goes in
-  the commit message.
+- Write the change story in the commit message. The file holds only the new rule.
 
 The commit that replaces or deletes an ADR must carry a trailer:
 
 ```
 Superseded: <old-slug> — <one-line why>
 ```
+
+One complete supersession commit:
+
+```
+Compute reaction counts at read time
+
+The stored counter double-counted one family with many sessions. Read-time
+aggregation counts distinct parents.
+
+Superseded: store-reaction-counters — stored aggregates; counts move to read time
+```
+
+The subject states the new rule. The body tells the change story. The trailer
+names the retired slug.
 
 After the replacement, grep the old slug. Update each constraint line, docstring,
 and issue that carries it. When the change also causes code changes, add a
@@ -61,13 +82,15 @@ Decision docs drift toward history prose: "previously", "as of v2", a status
 section. Run this check after each write to `docs/adr/` or to the glossary:
 
 ```sh
-grep -rniE 'previously|formerly|originally|used to|no longer|superseded by|replaced by|deprecated|as of |version [0-9]|\bv[0-9]+\b|## (status|history|changelog)|\*\*status' docs/adr/ CONTEXT.md
+grep -rniE 'previously|formerly|originally|used to|no longer|superseded by|replaced by|deprecated|as of |version [0-9]|\bv[0-9]+\b|## (status|history|changelog|considered)|\*\*status' docs/adr/ CONTEXT.md
 ```
 
 Zero hits is the pass condition. For each hit, do one of:
 
 - Rewrite the sentence as a current rule. "The API no longer accepts X" becomes
   "The API rejects X."
+- Fold a considered-options section into current rules: "Do not use X. X breaks
+  under Y." The rest of the section goes to the commit message.
 - Move the note to the commit message. The `Superseded:` trailer holds the change story.
 - Let the hit stand only when it states a current rule about an external system,
   such as "Use the v2 API."

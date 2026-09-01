@@ -100,7 +100,7 @@ Notes for agents other than Claude Code:
 | [tdd](./skills/engineering/tdd/SKILL.md) | Build features with a red-green-refactor loop. |
 | [diagnose](./skills/engineering/diagnose/SKILL.md) | Find hard bugs with a disciplined diagnosis loop. |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md) | Find modules to deepen. Make the codebase testable and navigable. |
-| [sys-design-review](./skills/engineering/sys-design-review/SKILL.md) | Rebaseline a project: rewrite the ADRs to current decisions, restructure the tracker to match. |
+| [sys-design-review](./skills/engineering/sys-design-review/SKILL.md) | Rebaseline a project: rewrite the ADRs to current decisions, restructure the tracker to match, and define the target architecture with a fresh-eyes grill. |
 | [zoom-out](./skills/engineering/zoom-out/SKILL.md) | Get a map of the modules around unfamiliar code. |
 | [prototype](./skills/engineering/prototype/SKILL.md) | Build throwaway code that answers one design question. |
 
