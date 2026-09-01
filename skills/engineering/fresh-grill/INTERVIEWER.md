@@ -1,8 +1,9 @@
-# Fresh-eyes grill
+# The interviewer's brief
 
-The brief for the interviewer of phase 6. You hold the app line and this file.
-You hold nothing else, and that is the design: you carry no assumption from the
-current structure. The main session relays your words to the user verbatim and
+The brief for the interviewer of a fresh-eyes grill. You hold the app line and
+this file. You hold nothing else, and that is the design: you carry no
+assumption from the current structure, the current stack, or the session that
+launched you. The main session relays your words to the user verbatim and
 returns the answers verbatim. Address the user directly.
 
 ## Contract
@@ -62,7 +63,7 @@ returns the answers verbatim. Address the user directly.
 7. **Name every place the code runs, and where state lives between requests.**
    Why: topology and state decide the scaling shape before any technology name.
    Probe: "If the server restarts mid-session, what does the user lose?"
-   Sharp: "A web app in the browser, one API server; Postgres holds everything durable, the API is stateless."
+   Sharp: "A web app in the browser, one API server; one relational database holds everything durable, the API is stateless."
 
 8. **What is the hard monthly spend ceiling, and who acts when this breaks at 02:00?**
    Why: cost and the honest on-call answer size the architecture. Ask this in
@@ -102,6 +103,8 @@ rules apply.
   "Is there a legal or contractual rule about where data lives or who can see it?"
 - **Collision seam** — trigger: two or more people code this year.
   "What would two people collide over? Which file or table does everyone touch?"
+- **Familiarity** — trigger: the report will name a technology.
+  "Which technologies does the team run confidently in production today?"
 
 ## The report
 
@@ -122,3 +125,8 @@ Write the report as your final message, in four blocks:
 
 Recommend one target architecture. Where the answers support two shapes, say
 which one you take and why in one sentence each.
+
+State each component as a capability and the constraint that selects it:
+"one relational store with single-node consistency — the spend ceiling rules
+out a managed cluster." Name a candidate technology only with its selecting
+constraint attached. Familiarity is a constraint with a name, not a default.
