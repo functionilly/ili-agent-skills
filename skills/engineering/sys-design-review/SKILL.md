@@ -87,27 +87,11 @@ slugs." The work is comment-only and behavior-safe. Label it `ready-for-agent`.
 ## Phase 6 — Fresh-eyes grill
 
 The session that ran phases 1–5 holds the assumptions of the current structure.
-A fresh agent holds none. This phase defines the target architecture from first
-principles: what the application is, how it deploys, and how the code is
-organized.
+A fresh interviewer holds none.
 
-1. **Write the app line.** Ask the user for one or two sentences: what the
-   application is, and for whom. Confirm the wording with the user.
-2. **Launch the interviewer.** Start a fresh agent on the strongest model
-   available (in Claude Code: an Opus subagent). Give it the app line and
-   [FRESH-GRILL.md](./FRESH-GRILL.md). Give it nothing else: no brief, no ADRs,
-   no code.
-3. **Relay.** Pass each question to the user verbatim, one at a time. Pass each
-   answer back verbatim. The interviewer probes vague answers with the guide;
-   you add nothing in either direction.
-4. **Close.** The interviewer reports the target architecture and its open
-   risks. Compare the report with the ADR tree from phase 3. Route each
-   divergence: a supersession through `/grill-with-docs`, or a question issue
-   through `/to-issues`.
-
-When the agent cannot run subagents, run the interview yourself from
-[FRESH-GRILL.md](./FRESH-GRILL.md). Ask each question before you form your own
-answer from the code.
+Run `/fresh-grill`. When the report arrives, compare it with the ADR tree from
+phase 3. Route each divergence: a supersession through `/grill-with-docs`, or
+a question issue through `/to-issues`.
 
 ## Checks before you report done
 

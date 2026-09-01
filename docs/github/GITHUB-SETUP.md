@@ -106,3 +106,4 @@ The table below shows which skill owns which GitHub operation.
 | Process incoming issues | `/triage` | Labels, comments, agent briefs, closures |
 | Record a rejection | `/triage` | A `.out-of-scope/*.md` file plus a `wontfix` closure |
 | Rebaseline a project | `/sys-design-review` | A rewritten `docs/adr/` tree plus one restructured issue batch |
+| Found a new project | `/found-project` | Founding ADRs in `docs/adr/` plus the first parent, slice, and question issues |

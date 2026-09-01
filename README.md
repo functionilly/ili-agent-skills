@@ -9,7 +9,7 @@ You stay in control.
 
 ## Why these skills exist
 
-Coding agents fail in six common ways. Each skill in this repo prevents one failure.
+Coding agents fail in seven common ways. Each skill in this repo prevents one failure.
 
 ### 1. The agent did not build what you want
 
@@ -60,6 +60,17 @@ Do not build on a rotten baseline.
 Use [`/sys-design-review`](./skills/engineering/sys-design-review/SKILL.md) to rewrite
 the ADRs to the current decisions and to restructure the tracker to match.
 
+### 7. The project started on defaults, not decisions
+
+A new project inherits the habitual stack and the agent's favorite patterns before
+anyone decides anything. Define the target architecture first, from first principles,
+with an interviewer that holds no context to anchor on.
+
+Use [`/found-project`](./skills/engineering/found-project/SKILL.md) to grill the idea
+fresh, write the founding ADRs, and cut the first slices. The same interview runs
+late in the cycle as [`/fresh-grill`](./skills/engineering/fresh-grill/SKILL.md),
+inside a rebaseline or on its own.
+
 ## Quickstart
 
 1. Install the skills into your agent:
@@ -72,6 +83,8 @@ the ADRs to the current decisions and to restructure the tracker to match.
 2. Complete the GitHub integration. Follow [docs/github/GITHUB-SETUP.md](./docs/github/GITHUB-SETUP.md).
 3. Run [`/setup-skills`](./skills/engineering/setup-skills/SKILL.md) once in each repo.
    It records your issue tracker, your triage labels, and your document layout.
+   For a brand-new repo, run [`/found-project`](./skills/engineering/found-project/SKILL.md)
+   instead — it runs `/setup-skills` as its first phase.
 
 ## Compatibility
 
@@ -101,6 +114,8 @@ Notes for agents other than Claude Code:
 | [diagnose](./skills/engineering/diagnose/SKILL.md) | Find hard bugs with a disciplined diagnosis loop. |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md) | Find modules to deepen. Make the codebase testable and navigable. |
 | [sys-design-review](./skills/engineering/sys-design-review/SKILL.md) | Rebaseline a project: rewrite the ADRs to current decisions, restructure the tracker to match, and define the target architecture with a fresh-eyes grill. |
+| [fresh-grill](./skills/engineering/fresh-grill/SKILL.md) | Interview the user through a context-free agent. Report the target architecture. |
+| [found-project](./skills/engineering/found-project/SKILL.md) | Found a new project: grill the idea fresh, write the founding ADRs, cut the first slices. |
 | [zoom-out](./skills/engineering/zoom-out/SKILL.md) | Get a map of the modules around unfamiliar code. |
 | [prototype](./skills/engineering/prototype/SKILL.md) | Build throwaway code that answers one design question. |
 
